@@ -1,0 +1,59 @@
+// Helpers
+// border
+@for $i from 0 through 20 {
+    .border-#{$i} {
+        border: #{$i}px;
+    }
+}
+
+
+@for $i from 0 through 20 {
+    .border-bottom-#{$i} {
+        border-bottom: #{$i}px;
+    }
+}
+
+@for $i from 0 through 20 {
+    .border-top-#{$i} {
+        border-top: #{$i}px;
+    }
+}
+
+@for $i from 0 through 20 {
+    .border-left-#{$i} {
+        border-left: #{$i}px;
+    }
+}
+
+@for $i from 0 through 20 {
+    .border-right-#{$i} {
+        border-right: #{$i}px;
+    }
+}
+
+.border-solid {
+    border-style: solid;
+}
+
+.custom-border-color {
+    border-color: #EEE;
+}
+
+// .custom-border-remove {
+//     border: 1px solid;
+    // border-left: none;
+// border-bottom: 1px solid;
+// border-top: 1px solid;
+    // &:first-child {
+    //     border-left: 1px solid;
+    // }
+// }
+.custom-border-remove {
+    border-right: 1px solid;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+  }
+  
+  .custom-border-remove.first-item {
+    border-left: 1px solid;
+  }

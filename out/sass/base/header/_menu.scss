@@ -1,0 +1,876 @@
+// Menu
+
+// # Contents
+// 1. Menu Base
+// 2. Menu
+// 2.1) Menu - Item
+// 2.2) Menu - Main Item
+// 2.3) Menu - Dropdown Arrow
+// 3. Mega Menu
+// 4. Main Nav Menu
+// 5. Menu Tip
+
+// # Variables
+
+@include set-default(
+  (
+    menu: (
+      color: #777,
+      background: false,
+      active-color: false,
+      active-background: #f4f4f4,
+
+      mega: (
+        width-4col: 580px,
+        width-3col: 600px,
+        color: false,
+        background: false,
+        active-color: false,
+        active-background: transparent,
+        family: false,
+        size: false,
+        weight: false,
+      ),
+
+      nolink: (
+        color: #333,
+        background: false,
+      ),
+
+      top: (
+        color: #555,
+        background: false,
+        active-color: $primary-color,
+        active-background: transparent,
+        letter-spacing: -0.01em,
+      ),
+
+      main: (
+        font-size: 12px,
+        color: false,
+        background: false,
+        active-color: false,
+        active-background: false,
+
+        mega: (
+          color: false,
+          background: false,
+          active-color: false,
+          active-background: false,
+        ),
+
+        nolink: (
+          color: false,
+          background: false,
+          font-weight: false,
+        ),
+
+        top: (
+          cut-start-end: true,
+
+          color: false,
+          background: false,
+          active-color: false,
+          active-background: false,
+
+          font-size: 12px,
+          font-weight: 700,
+          font-family: false,
+          letter-spacing: false,
+          padding: 19px 0,
+          sticky-padding: false,
+          space: 2.9rem,
+        ),
+      ),
+    ),
+  )
+);
+
+// 1. Menu Base
+
+.menu,
+.menu li,
+.menu ul,
+.menu ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// 2. Menu
+.menu {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  @include clearfix;
+
+  // 2.1) Menu - Item
+
+  > li {
+    > ul,
+    > .megamenu {
+      &:before {
+        content: "";
+        position: absolute;
+        z-index: 3333;
+        left: 9%;
+        top: -20px;
+        margin-left: -14px;
+        border: 10px solid;
+        border-color: transparent transparent #fff;
+        opacity: 1;
+        -webkit-transition: opacity ease-in 0.08s;
+        transition: opacity ease-in 0.08s;
+      }
+    }
+
+    > ul:before {
+      left: 16%;
+    }
+  }
+
+  li {
+    // Sub Item Anchor
+    > a {
+      display: block;
+      padding: 0.8rem 1.8rem;
+      transition: 0.2s ease-out;
+
+      @include css(color, menu, color);
+      @include css(background, menu, background);
+    }
+
+    &:hover {
+      ul,
+      .megamenu {
+        top: 100%;
+        opacity: 1;
+        visibility: visible;
+        margin-top: 0rem;
+      }
+    }
+
+    // Active Anchor
+    &:hover,
+    &.show,
+    &.active {
+      > a {
+        @include css(color, menu, active-color);
+        @include css(background, menu, active-background);
+      }
+    }
+  }
+
+  // 2.2) Menu - Main Item
+  > li {
+    float: left;
+    position: relative;
+    margin-right: 2.8rem;
+
+    // Anchor
+    > a {
+      padding: 1rem 0;
+      font-size: 13px;
+      font-weight: 400;
+
+      @include css(color, menu, top, color);
+      @include css(background, menu, top, background);
+    }
+
+    // Active Anchor
+    &:hover,
+    &.show,
+    &.active {
+      > a {
+        @include css(color, menu, top, active-color);
+        @include css(background, menu, top, active-background);
+      }
+    }
+
+    // 2.3) Menu - Dropdown Triangle
+    > .sf-with-ul:before {
+      content: "";
+      position: absolute;
+      z-index: 1000;
+      left: 50%;
+      bottom: 0;
+      margin-left: -14px;
+      border: 10px solid;
+      border-color: transparent transparent #fff;
+      opacity: 0;
+      transition: opacity ease-in 0.08s;
+    }
+
+    &.show > .sf-with-ul:before {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  // 3. Mega Menu
+  .megamenu {
+    display: block;
+    position: absolute;
+    padding: 10px 20px;
+    margin-top: -2rem;
+    top: -999999px;
+    visibility: hidden;
+    opacity: 0;
+    border: 1px solid #eee;
+    border-top: 3px solid $primary-color;
+    left: 15px;
+    transition: opacity 0.3s, visibility 0.3s, margin-top 0.3s;
+    z-index: 999;
+    background-color: #fff;
+    box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.15);
+    @include css(width, menu, mega, width-4col);
+
+    &.megamenu-3cols {
+      @include css(width, menu, mega, width-3col);
+    }
+
+    .row > div {
+      padding-top: 1.5rem;
+    }
+
+    img {
+      width: 300px;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .submenu {
+      margin: 0;
+      padding-top: 0;
+      border-top: none;
+      display: block;
+      position: static;
+      box-shadow: none;
+      min-width: 0;
+
+      a {
+        padding: 7px 8px 8px 0;
+
+        @include css(font-family, menu, mega, family);
+        @include css(font-size, menu, mega, size);
+        @include css(font-weight, menu, mega, weight);
+        @include css(color, menu, mega, color);
+        @include css(background, menu, mega, background);
+      }
+
+      li:hover a {
+        text-decoration: underline;
+        @include css(color, menu, mega, active-color);
+        @include css(background, menu, mega, active-background);
+      }
+    }
+  }
+
+  .nolink {
+    cursor: default;
+    display: inline-block;
+    padding-bottom: 11px;
+    font-weight: 700;
+
+    @include css(font-family, menu, mega, family);
+    @include css(font-size, menu, mega, size);
+    @include css(color, menu, nolink, color);
+    @include css(background, menu, nolink, background);
+  }
+
+  // Sub Menu
+  ul {
+    display: block;
+    position: absolute;
+    min-width: 200px;
+    padding: 5px 0;
+    left: 0;
+    z-index: 101;
+    background-color: #fff;
+    box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.15);
+    transition: opacity 0.3s, visibility 0.3s, margin-top 0.3s;
+    top: -999999px;
+    opacity: 0;
+    visibility: hidden;
+    margin-top: -2rem;
+
+    a {
+      @include css(font-family, menu, mega, family);
+      @include css(font-size, menu, mega, size);
+      @include css(font-weight, menu, mega, weight);
+      @include css(color, menu, mega, color);
+      @include css(background, menu, mega, background);
+    }
+
+    ul {
+      top: -5px;
+      left: 100%;
+    }
+  }
+
+  // Dropdown Arrow
+  &.sf-arrows {
+    .sf-with-ul + ul > li {
+      position: relative;
+    }
+
+    // Sub Menu Anchor's dropdown icon
+    .sf-with-ul:after {
+      position: absolute;
+      right: 1rem;
+      content: "\e81a";
+      font-family: "porto";
+    }
+
+    // Main Anchor's dropdown icon
+    > li > .sf-with-ul:after {
+      content: "\e81c";
+      position: static;
+      margin-left: 5px;
+      font-weight: 400;
+    }
+  }
+}
+
+// 4. Main Nav - Menu
+
+.main-nav .menu {
+  text-transform: uppercase;
+  @include css(font-size, menu, main, font-size);
+  @include css(font-family, menu, main, font-family);
+
+  // 4.1) Header Menu Item
+  li {
+    // Anchor
+    > a {
+      @include css(color, menu, main, color);
+      @include css(background, menu, main, background);
+    }
+
+    // Active Anchor
+    &:hover > a,
+    &.show > a,
+    &.active > a {
+      @include css(color, menu, main, active-color);
+      @include css(background, menu, main, active-background);
+    }
+  }
+
+  // 4.2) Header Menu Main Item
+  > li {
+    @include css(margin-right, menu, main, top, space);
+
+    // Anchor
+    > a {
+      @include css(font-size, menu, main, top, font-size);
+      @include css(font-weight, menu, main, top, font-weight);
+      @include css(padding, menu, main, top, padding);
+      @include css(letter-spacing, menu, main, top, letter-spacing);
+      @include css(color, menu, main, top, color);
+      @include css(background, menu, main, top, background);
+      @include css(font-family, menu, main, top, font-family);
+      @include css(letter-spacing, menu, main, top, letter-spacing);
+
+      .sticky-header.fixed & {
+        @include css(padding, menu, main, top, sticky-padding);
+      }
+    }
+
+    // Active Anchor
+    &:hover > a,
+    &.show > a,
+    &.active > a {
+      @include css(color, menu, main, top, active-color);
+      @include css(background, menu, main, top, active-background);
+    }
+
+    @if (get(menu, main, top, cut-start-end)) {
+      &:first-child > a {
+        padding-left: 0;
+      }
+
+      &:not(.float-right):last-child,
+      &:not(.float-right) + li.float-right {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &.sf-arrows ul {
+    border-top: none;
+  }
+
+  > li > ul {
+    left: -15px;
+  }
+
+  .megamenu {
+    left: -15px;
+    border-top: none;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    a {
+      @include css(color, menu, main, mega, color);
+      @include css(background, menu, main, mega, background);
+    }
+
+    li:hover a {
+      @include css(color, menu, main, mega, active-color);
+      @include css(background, menu, main, mega, active-background);
+    }
+  }
+
+  .nolink {
+    @include css(color, menu, main, nolink, color);
+    @include css(background, menu, main, nolink, background);
+    @include css(font-weight, menu, main, nolink, font-weight);
+  }
+}
+
+// 5. Menu Tip
+
+.tip {
+  display: inline-block;
+  position: relative;
+  margin: -2px 0 0 1rem;
+  padding: 3px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-family: $font-family;
+  font-size: 1rem;
+  line-height: 1;
+  text-transform: uppercase;
+  vertical-align: middle;
+  z-index: 1;
+
+  &:before {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    left: auto;
+    margin-top: -3px;
+    border: 3px solid transparent;
+    border-width: 3px 2px 0 2px;
+    content: "";
+  }
+}
+
+.tip-new {
+  background-color: #0fc567;
+
+  &:not(.tip-top):before {
+    border-right-color: #0fc567;
+  }
+
+  &.tip-top:before {
+    border-top-color: #0fc567;
+  }
+}
+
+.tip-hot {
+  background-color: #eb2771;
+
+  &:not(.tip-top):before {
+    border-right-color: #eb2771;
+  }
+
+  &.tip-top:before {
+    border-right-color: #eb2771;
+  }
+}
+
+.tip-top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-top: 6px;
+  margin-left: -2px;
+  transform: translate(-50%);
+
+  &:before {
+    top: 100%;
+    right: 70%;
+    margin: 0;
+  }
+}
+
+// 6. Menu Banner
+.menu-banner {
+  height: 100%;
+
+  figure {
+    margin-bottom: 0;
+    height: 100%;
+  }
+
+  .banner-content {
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+  }
+
+  h4 {
+    font-size: 2.7rem;
+    font-weight: 600;
+    line-height: 1;
+    color: #485156;
+    margin-bottom: 3.5rem;
+
+    span {
+      font-size: 3.1rem;
+      font-weight: 700;
+    }
+
+    b {
+      font-size: 3.2rem;
+      color: #f4762a;
+      font-family: $third-font-family;
+    }
+
+    i {
+      position: absolute;
+      top: 33.5%;
+      font-family: $third-font-family;
+      font-size: 1.8rem;
+      font-style: normal;
+      transform: translateY(-50%) rotate(-90deg);
+    }
+  }
+
+  .btn {
+    font-family: $third-font-family;
+    border-radius: 1px;
+    font-weight: 300;
+    color: #fff;
+  }
+
+  &.menu-banner-2 {
+    max-height: 317px;
+
+    figure img {
+      object-position: center 80%;
+    }
+
+    .banner-content {
+      top: 10px;
+      left: auto;
+      right: 10px;
+      transform: none;
+
+      b {
+        color: $primary-color;
+      }
+    }
+
+    i {
+      position: absolute;
+      font-style: normal;
+      font-size: 108px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: 0.02em;
+      color: #fff;
+      top: 58px;
+      left: -58px;
+      transform: rotate(-90deg);
+    }
+
+    .btn {
+      position: absolute;
+      bottom: 12px;
+      padding: 7px 29px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+      font-weight: 300;
+      white-space: nowrap;
+    }
+  }
+}
+
+// custom
+.custom-navbg {
+  z-index: 99;
+  position: absolute;
+  background: "#F9F9F9";
+  width: 100%;
+}
+.mobile_backward {
+  display: none;
+}
+.custom__mobilemenu {
+  display: none;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    text-align: center;
+    &-circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background-color: rgba(245, 245, 245, 1);
+      overflow: hidden;
+    }
+  }
+  &-imgage {
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+.custom__menu {
+  display: flex;
+  justify-content: start;
+  // overflow-x: scroll;
+  color: black;
+   cursor: pointer;
+   margin-bottom: 0;
+   padding-left: 0;
+
+  padding-bottom: 0 !important;
+  &__item {
+    display: flex;
+    background: white;
+    gap: 4px;
+    place-items: center;
+    justify-content: center;
+    height: 51px;
+    text-wrap: nowrap;
+    border: 1px solid rgba(240, 240, 240, 1);
+    border-right: 0px solid rgba(240, 240, 240, 1);
+    &:last-child {
+      // border-right: 1px solid rgba(240, 240, 240, 1);
+    }
+
+    &-image {
+      width: 50px !important;
+      // height: 32px !important;/*devchamge*/
+      aspect-ratio: 3.3/2;/*devchamge*/
+      object-fit: contain;/*devchamge*/
+      margin-left: 5px;
+      img {
+        width: 30px !important;
+        // height: 32px !important;
+        aspect-ratio:3.3/2;/*devchamge*/
+        object-fit: contain;
+        user-select: none;
+        max-width: unset;
+        margin: 6px;
+
+      }
+    }
+    &-label {
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 0;
+      width: 100%;
+      min-width: 60px;
+			overflow: hidden;
+    }
+  }
+}
+::-webkit-scrollbar {
+  width: 0; /* Set the width to 0 to hide scrollbar */
+}
+
+// child menu
+.custom__menufirstchild {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  padding: 28px 0;
+  row-gap: 15px;
+  border-bottom: 1px solid rgba(240, 240, 240, 1);
+  cursor: pointer;
+  color: black;
+  &__item {
+    display: flex;
+    background: white;
+    gap: 4px;
+    place-items: center;
+    justify-content: center;
+    height: 51px;
+    min-width: 130px;
+    // max-width: 130px;
+    // flex: 1;
+    border: 1px solid rgba(240, 240, 240, 1);
+    border-right: 0px solid rgba(240, 240, 240, 1);
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.08);
+
+    &:last-child {
+      // border-right: 1px solid rgba(240, 240, 240, 1);
+    }
+
+    &-image {
+      img {
+        width: 14px;
+        aspect-ratio: "1";
+        user-select: none;
+      }
+    }
+    &-label {
+      font-size: 12px;
+      font-weight: 500;
+      margin: 8px;
+    }
+  }
+}
+.customheading {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  border-left: 3px solid red;
+  padding-left: 10px;
+  padding-top: 6px;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+.custom__menusecondchild {
+  display: flex;
+  justify-content: left;
+  gap: 10px;
+  padding-bottom: 28px;
+  color: black;
+
+  border-bottom: 1px solid rgba(240, 240, 240, 1);
+  &__item {
+    border: 1px solid rgba(240, 240, 240, 1);
+    height: 51px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    gap: 4;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.08);
+    min-width: 133px;
+    max-width: 133px;
+    cursor: pointer;
+    &-label {
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+  }
+}
+.custom__menulastchild {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 10px;
+  padding-bottom: 14px;
+  color: black;
+  &__item {
+    border: 1px solid rgba(240, 240, 240, 1);
+    height: 45px;
+    display: flex;
+    justify-content: left;
+    place-items: center;
+    gap: 10;
+    background: white;
+    cursor: pointer;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.08);
+    min-width: 121px;
+    max-width: 121px;
+    &-image {
+      img {
+        margin-right: 10px;
+        width: 25px;
+        aspect-ratio: "1";
+      }
+    }
+    &-label {
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+  }
+}
+.custom__menu__item.activate {
+  border-bottom: 5px solid red;
+}
+
+.custom__mobile__item {
+  cursor: pointer;
+}
+
+.custom__mobile__item.activate {
+  color: red;
+}
+
+.customactive {
+  background-color: black;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .custom__menu {
+    display: none;
+  }
+
+  .active_container_hidden {
+    display: none !important;
+  }
+
+  .mobile_backward {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .custom__mobilemenu {
+    display: flex;
+    padding: 5rem 0 0px 0;
+    gap: 18px;
+    overflow-x: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+
+  .custom__menufirstchild,
+  .custom__menusecondchild,
+  .custom__menulastchild {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    &__item {
+      min-width: none;
+      max-width: none;
+    }
+  }
+
+  .custom__menufirstchild__item {
+    // width: 150px; /*
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-right: 1px solid rgba(240, 240, 240, 1);
+  }
+  //   .custom__menufirstchild__item-label{
+  // 	padding: 0,63px;
+  //   }
+  .custom__menufirstchild__item:last-child {
+    margin-right: 0;
+    border-right: 0;
+  }
+}
+.custom__mobilemenu::-webkit-scrollbar {
+  display: none;
+}
+
+.ffr {
+  overflow: auto !important;
+  background-color: red;
+}

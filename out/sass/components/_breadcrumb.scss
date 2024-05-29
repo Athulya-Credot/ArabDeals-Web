@@ -1,0 +1,107 @@
+// Breadcrumb
+
+// # Contents
+// 1. Nav
+// 2. Item
+// 3. Responsive
+
+// # Variables
+
+@include set-default(
+	(
+
+		breadcrumb: (
+			color: rgba(0, 0, 0, 1),
+			letter-spacing: -.01em,
+			border-top: false,
+			// border-bottom: 1px solid #dfdfdf,
+			margin-bottom: false,
+			padding: 1rem 0 0 0,
+
+			font: (
+				size: 12px,
+				weight: false,
+				family: false,
+			),
+
+			divider: (
+				size: 12px,
+				space: 1.5rem,
+				weight: false,
+				content: '\e81a'
+			)
+		)
+	)
+);
+
+// 1. Nav
+
+.breadcrumb-nav {
+	@include css( color, breadcrumb, color );
+	@include css( border-top, breadcrumb, border-top);
+	// @include css( border-bottom, breadcrumb, border-bottom);
+	@include css( margin-bottom, breadcrumb, margin-bottom);
+	margin-top: -22px;
+	margin-bottom: 15px;
+}
+
+.breadcrumb {
+	margin-bottom: 0;
+  padding: 6rem 0 0 0;
+	border-radius: 0;
+	background-color: transparent;
+}
+
+// 2. Item
+
+.breadcrumb-item {
+	@include css( font-weight, breadcrumb, font, weight );
+	@include css( font-size, breadcrumb, font, size);
+	@include css( font-family, breadcrumb, font, family);
+	@include css( letter-spacing, breadcrumb, letter-spacing );
+	line-height: 24px;
+	text-transform: uppercase;
+	
+
+	& + & {
+		// @include css( padding-left, breadcrumb, divider, space);
+
+		&:before {
+			color: inherit;
+			padding-right: 1.4rem;
+			// @include css( content, breadcrumb, divider, content);
+			// @include css( font-size, breadcrumb, divider, size);
+			// @include css( font-weight, breadcrumb, divider, weight);
+			font-family: 'porto';
+			vertical-align: middle;
+			margin-top: -2px;
+		}
+	}
+
+	a:not(:first-child) {
+		margin-left: 5px;
+		
+	}
+
+	a{
+		// border: 1px solid #ccc;
+		padding: 10px 14px;
+		border-radius: 50px;
+font-weight: 600;
+	background-color: #F8F8F8;	
+		
+	}
+	.activeitem{
+		background-color: black;
+		color: white;
+		border: 1px solid black;
+	}
+	
+
+	a,
+	&.active {
+		color: inherit;
+		
+	}
+	
+}

@@ -1,0 +1,41 @@
+.circle{
+    width: 40px;
+    height: 40px;
+    background-color: rgba(232, 232, 232, 0.29);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.innercontainer{
+    padding: 0 20px;
+}
+.header-search-category .btn{
+    background-color: black!important;
+}
+.offerdiv{
+    margin:0 6px 0 65px
+}
+.navcontainer{
+    border: 1px solid rgba(240, 240, 240, 1);
+    padding: 18px!important;
+    border-radius: 0;
+}
+.navbarborder{
+    border-top: 1px solid rgba(240, 240, 240, 1);
+    border-bottom: 1px solid rgba(240, 240, 240, 1);
+}
+.flagimg{
+    width: 26px;
+}
+.langimg{
+    width: 20px;
+    margin: 6px 0px;
+}
+@media only screen and (max-width: 600px){
+    .offerdiv{
+        display: none!important;
+    } 
+}
+
+

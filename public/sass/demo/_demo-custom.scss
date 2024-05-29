@@ -1,0 +1,251 @@
+// Pages
+
+// # Content
+// 1. Shop Page
+// 2. Product Single Page
+
+// 1. Shop Page
+.shop-off-canvas {
+  .sidebar-shop {
+    padding-top: 0;
+
+    .sidebar-wrapper {
+      border: 0;
+    }
+
+    .widget {
+      padding: 2rem 0;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #f4f4f4;
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+.sidebar-shop {
+  .widget-body {
+    padding-top: 1.7rem;
+  }
+
+  .cat-list li {
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  .widget-price {
+    .widget-body {
+      padding-top: 1.5rem;
+    }
+  }
+
+  .widget-brand {
+    .widget-body {
+      padding-top: 1.6rem;
+    }
+  }
+}
+
+.custom-divide-line {
+  .product-default:not(.product-list) .btn-quickview {
+    left: 15px;
+    right: 15px;
+    width: auto;
+  }
+}
+
+.widget-brand {
+  .cat-list {
+    a {
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+    li:last-child {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+span.toggle {
+  top: -4px;
+  font-size: 13px;
+}
+
+// Toolbox and Pagination
+.toolbox {
+  .form-control,
+  label {
+    padding-bottom: 2px;
+    font-family: $second-font-family;
+  }
+}
+
+.page-item {
+  > .page-link:not(span) {
+    display: flex;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    width: 33px;
+    height: 33px;
+    border: 1px solid #ccc;
+  }
+}
+
+.category-banner {
+  padding-top: 250px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// 2. Product Single Page
+// 2.1) Base
+.custom-divide-line {
+  overflow: hidden;
+
+  > .row {
+    margin-right: -1px;
+
+    > div:not(:nth-last-child(-n + 4)) {
+      border-bottom: 1px solid #b9b9b9;
+    }
+    > div {
+      border-right: 1px solid #b9b9b9;
+    }
+  }
+}
+.custom-shopproduct {
+  &:last-child {
+    border-right: 1px solid #b9b9b9 !important;
+  }
+  &:nth-child(n + 9) {
+    border-bottom: transparent !important;
+  }
+}
+// .custom-shopproduct
+.products-section {
+  h2 {
+    margin-bottom: 5.4rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  figure {
+    transition: box-shadow 0.3s;
+  }
+
+  .product-default:hover figure {
+    box-shadow: 0 25px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  .products-slider {
+    padding-bottom: 7.5rem;
+  }
+}
+
+// 2.2) Product Component
+// 2.2.1) Product Thumbnail
+.prod-thumbnail {
+  margin-top: 20px;
+  padding: 0 2px 0 0px;
+}
+
+.pg-vertical .owl-dot::before,
+.product-both-info .inner,
+.product-single-info .inner,
+.product-single-grid .inner,
+.product-single-carousel,
+.prod-thumbnail img {
+  border: 1px solid #f4f4f4;
+}
+
+// 2.2.2) Product Thumbnail
+.product-single-details {
+  .ratings-container {
+    margin-bottom: 3rem;
+    margin-top: 2.9rem;
+  }
+}
+
+// 2.2.3) Product Thumbnail
+.product-single-tabs {
+  .tab-pane.show {
+    padding-top: 2.9rem;
+  }
+
+  .nav.nav-tabs {
+    margin-bottom: 1px;
+
+    .nav-link {
+      padding: 1.1rem 0 1.4rem;
+      margin-right: 0;
+      font-size: 1.8rem;
+      font-family: $second-font-family;
+      color: black;
+    }
+  }
+}
+
+.add-wishlist i {
+  font-size: 1.8rem;
+}
+
+// 3. Component
+.inner-icon {
+  .price-box {
+    font-family: $second-font-family;
+  }
+}
+
+@include only_for_edge() {
+  .custom-divide-line {
+    > .row {
+      margin-right: -2px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .shop-off-canvas .sidebar-wrapper {
+    padding: 0rem;
+  }
+}
+@media (max-width: 700px) {
+  .custom-shopproduct {
+    &:nth-child(n + 5) {
+      border-bottom: 1px solid #b9b9b9 !important;
+    }
+  }
+}
+
+.btn-address-edit {
+  color: #222529;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  height: 32px;
+  width: auto;
+  padding: 0 20px !important;
+  font-size: 13px;
+  line-height: 32px;
+  text-indent: 0;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.btn-address-edit:hover {
+  color: #000;
+}
+
+
+input[type="radio"] {
+ accent-color: black; /* Change color of the radio button */
+}
+
+input[type="checkbox"] {
+ accent-color: black; /* Change color of the checkbox */
+}
