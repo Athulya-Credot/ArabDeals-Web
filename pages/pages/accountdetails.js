@@ -124,13 +124,13 @@ function accountdetails() {
           </li>
         </ul>
       </div>
-      <div className="container checkout-container">
+      <div className=" container checkout-container">
         <div className="row">
           <div className="col-lg-12">
             <ul className="checkout-steps">
               <li>
                 <div
-                  className="container"
+                  className=""
                   style={{
                     marginTop: "3rem",
                     borderBottom: "1px solid",
@@ -141,9 +141,131 @@ function accountdetails() {
                   <h2 className="step-title">Account Details</h2>
                 </div>
 
-                <form onSubmit={handleSubmit(onSubmit)} id="checkout-form">
-                  <div className="row">
-                    <div className="col-md-6 mb-2">
+                <div className=" mx-5">
+                  <form onSubmit={handleSubmit(onSubmit)} id="checkout-form">
+                    <div className="row">
+                      <div className="col-md-6 mb-2">
+                        <div className="form-group mr-5 mb-0">
+                          <label
+                            style={{
+                              fontFamily: "Poppins",
+                              fontWeight: "400px",
+                              lineHeight: "20px",
+                            }}
+                          >
+                            First name{" "}
+                            <ab className="required" title="required">
+                              *
+                            </ab>
+                          </label>
+  
+                          <Controller
+                            control={control}
+                            name="firstName"
+                            render={({ field: { onChange, value } }) => (
+                              <input
+                                type="text"
+                                className="form-control"
+                                value={value}
+                                onChange={onChange}
+                                style={{ marginTop: "10px" }}
+                              />
+                            )}
+                            rules={fieldRules.firstName}
+                          />
+                        </div>
+                        {errors?.firstName ? (
+                          <div style={{ color: "red", marginTop: "10px" }}>
+                            {errors?.firstName?.message}
+                          </div>
+                        ) : null}
+                      </div>
+  
+                      <div className="col-md-6">
+                        <div className="form-group  mb-0">
+                          <label
+                            style={{
+                              fontFamily: "Poppins",
+                              fontWeight: "400px",
+                              lineHeight: "20px",
+                            }}
+                          >
+                            Last name{" "}
+                            <ab className="required" title="required">
+                              *
+                            </ab>
+                          </label>
+                          <Controller
+                            control={control}
+                            name="lastName"
+                            render={({ field: { onChange, value } }) => (
+                              <input
+                                type="text"
+                                className="form-control"
+                                value={value}
+                                onChange={onChange}
+                                style={{ marginTop: "10px" }}
+                              />
+                            )}
+                            rules={fieldRules.lastName}
+                          />
+                        </div>
+                        {errors?.lastName ? (
+                          <div style={{ color: "red", marginTop: "10px" }}>
+                            {errors?.lastName?.message}
+                          </div>
+                        ) : null}
+                      </div>
+  
+                      <div className="col-md-6">
+                        <div className="form-group mr-5 mb-0">
+                          <label
+                            style={{
+                              fontFamily: "Poppins",
+                              fontWeight: "400px",
+                              lineHeight: "20px",
+                            }}
+                          >
+                            Display name{" "}
+                            <ab className="required" title="required">
+                              *
+                            </ab>
+                          </label>
+                          <Controller
+                            control={control}
+                            name="displayName"
+                            render={({ field: { onChange, value } }) => (
+                              <input
+                                type="text"
+                                className="form-control mb-0"
+                                style={{ marginTop: "10px" }}
+                                value={value}
+                                onChange={onChange}
+                              />
+                            )}
+                            rules={fieldRules.displayName}
+                          />
+                        </div>
+                        {errors?.displayName ? (
+                          <div style={{ color: "red", marginTop: "10px" }}>
+                            {errors?.displayName?.message}
+                          </div>
+                        ) : null}
+                      </div>
+  <div className="col-md-12 mt-4">
+    
+                      <p
+                        style={{
+                          fontFamily: "Poppins",
+                          fontWeight: "400px",
+                          fontSize: "12px",
+                          lineHeight: "26px",
+                        }}
+                        >
+                        This will be how your name will be displayed in the account section and in
+                        reviews
+                      </p>
+    
                       <div className="form-group mb-0">
                         <label
                           style={{
@@ -151,166 +273,48 @@ function accountdetails() {
                             fontWeight: "400px",
                             lineHeight: "20px",
                           }}
-                        >
-                          First name{" "}
+                          >
+                          Email address{" "}
                           <ab className="required" title="required">
                             *
                           </ab>
                         </label>
-
-                        <Controller
-                          control={control}
-                          name="firstName"
-                          render={({ field: { onChange, value } }) => (
-                            <input
-                              type="text"
-                              className="form-control"
-                              value={value}
-                              onChange={onChange}
-                              style={{ marginTop: "10px" }}
-                            />
-                          )}
-                          rules={fieldRules.firstName}
-                        />
+  </div>
                       </div>
-                      {errors?.firstName ? (
+                      <Controller
+                        control={control}
+                        name="email"
+                        render={({ field: { onChange, value } }) => (
+                          <input
+                            type="email"
+                            className="form-control "
+                            style={{ marginTop: "10px" }}
+                            value={value}
+                            onChange={onChange}
+                          />
+                        )}
+                        rules={fieldRules.email}
+                      />
+                      {errors?.email ? (
                         <div style={{ color: "red", marginTop: "10px" }}>
-                          {errors?.firstName?.message}
+                          {errors?.email?.message}
                         </div>
                       ) : null}
                     </div>
-
-                    <div className="col-md-6">
-                      <div className="form-group mb-0">
-                        <label
-                          style={{
-                            fontFamily: "Poppins",
-                            fontWeight: "400px",
-                            lineHeight: "20px",
-                          }}
-                        >
-                          Last name{" "}
-                          <ab className="required" title="required">
-                            *
-                          </ab>
-                        </label>
-                        <Controller
-                          control={control}
-                          name="lastName"
-                          render={({ field: { onChange, value } }) => (
-                            <input
-                              type="text"
-                              className="form-control"
-                              value={value}
-                              onChange={onChange}
-                              style={{ marginTop: "10px" }}
-                            />
-                          )}
-                          rules={fieldRules.lastName}
-                        />
-                      </div>
-                      {errors?.lastName ? (
-                        <div style={{ color: "red", marginTop: "10px" }}>
-                          {errors?.lastName?.message}
-                        </div>
-                      ) : null}
-                    </div>
-
-                    <div className="col-md-6">
-                      <div className="form-group mb-0">
-                        <label
-                          style={{
-                            fontFamily: "Poppins",
-                            fontWeight: "400px",
-                            lineHeight: "20px",
-                          }}
-                        >
-                          Display name{" "}
-                          <ab className="required" title="required">
-                            *
-                          </ab>
-                        </label>
-                        <Controller
-                          control={control}
-                          name="displayName"
-                          render={({ field: { onChange, value } }) => (
-                            <input
-                              type="text"
-                              className="form-control mb-0"
-                              style={{ marginTop: "10px" }}
-                              value={value}
-                              onChange={onChange}
-                            />
-                          )}
-                          rules={fieldRules.displayName}
-                        />
-                      </div>
-                      {errors?.displayName ? (
-                        <div style={{ color: "red", marginTop: "10px" }}>
-                          {errors?.displayName?.message}
-                        </div>
-                      ) : null}
-                    </div>
-                  </div>
-
-                  <p
-                    style={{
-                      fontFamily: "Poppins",
-                      fontWeight: "400px",
-                      fontSize: "12px",
-                      lineHeight: "26px",
-                    }}
-                  >
-                    This will be how your name will be displayed in the account section and in
-                    reviews
-                  </p>
-
-                  <div className="form-group mb-0">
-                    <label
-                      style={{
-                        fontFamily: "Poppins",
-                        fontWeight: "400px",
-                        lineHeight: "20px",
-                      }}
+  
+                    <div
+                      className="container"
+                      style={{ display: "flex", justifyContent: "flex-end" }}
                     >
-                      Email address{" "}
-                      <ab className="required" title="required">
-                        *
-                      </ab>
-                    </label>
-                    <Controller
-                      control={control}
-                      name="email"
-                      render={({ field: { onChange, value } }) => (
-                        <input
-                          type="email"
-                          className="form-control "
-                          style={{ marginTop: "10px" }}
-                          value={value}
-                          onChange={onChange}
-                        />
-                      )}
-                      rules={fieldRules.email}
-                    />
-                    {errors?.email ? (
-                      <div style={{ color: "red", marginTop: "10px" }}>
-                        {errors?.email?.message}
+                      <div className="mt-3">
+                        {" "}
+                        <button type="submit" className="btn btn-dark mr-0">
+                          Save changes
+                        </button>
                       </div>
-                    ) : null}
-                  </div>
-
-                  <div
-                    className="container"
-                    style={{ display: "flex", justifyContent: "flex-end" }}
-                  >
-                    <div className="mt-3">
-                      {" "}
-                      <button type="submit" className="btn btn-dark mr-0">
-                        Save changes
-                      </button>
                     </div>
-                  </div>
-                </form>
+                  </form>
+                </div>
               </li>
             </ul>
           </div>

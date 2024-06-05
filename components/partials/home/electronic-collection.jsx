@@ -93,7 +93,7 @@ function ElectronicCollection() {
               <h4 className="section-title text-transform-none mb-0 mr-0 " >
                 Best Selling
               </h4>
-              <ALink href="/shop?bestSeller=true" style={{ color: "black", fontWeight: "600",marginTop:'15px' }}>
+              <ALink href="/shop?bestSeller=true" style={{ color: "black", fontWeight: "600" }}>
                 View All Products
               </ALink>
             </div>

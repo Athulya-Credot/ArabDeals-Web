@@ -76,6 +76,9 @@ a:focus {
 a:hover .custom-sharing{
 	fill: $primary-color;
 }
+a:hover,a:focus .sidebar-shop .cat-list li{
+	background-color: #F8F8F8;
+}
 // 1.3) Headings
 
 .heading {

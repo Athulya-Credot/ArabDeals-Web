@@ -293,6 +293,7 @@ function Wishlist(props) {
                           <ALink
                             className="btn btn-dark btn-add-cart product-type-simple btn-shop"
                             href={`/product/default/${item.slug}`}
+                             
                           >
                             select options
                           </ALink>
@@ -302,6 +303,7 @@ function Wishlist(props) {
                             onClick={(e) => {
                               onAddCartClick(e, item);
                             }}
+                            
                           >
                             ADD TO CART
                           </button>

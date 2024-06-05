@@ -70,7 +70,7 @@ export const postSlider = {
 
 export const productSlider = {
     loop: false,
-    margin: 1,
+    margin: 0,
     autoplay: false,
     dots: false,
     nav: false,

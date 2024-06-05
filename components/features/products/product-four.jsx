@@ -242,7 +242,7 @@ function ProductFour(props) {
         </div>
 
         <h3 className="product-title" style={{ justifyContent: "center" }}>
-          <ALink href={`/product/default/${product.slug}`}>
+          <ALink href={`/product/default/${product.slug}`}  data-toggle="tooltip" data-title={product?.productName}>
             {product?.productName}
           </ALink>
         </h3>

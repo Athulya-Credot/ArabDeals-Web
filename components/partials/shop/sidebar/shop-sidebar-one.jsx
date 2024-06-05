@@ -257,8 +257,9 @@ function ShopSidebarOne(props) {
         className={`sidebar-shop col-lg-3 pb-lg-3 mobile-sidebar skeleton-body skel-shop-products ${!loading ? "loaded" : ""
           } ${props.display === "none" ? "d-lg-none" : ""} ${props.right ? "" : "order-lg-first"}`}
         style={{
-          maxHeight: "976px",
-          overflow: "scroll",
+          maxHeight: "944px",
+          overflowY: "scroll",
+          overflowX:"hidden"
         }}
       >
         <StickyBox className="sidebar-wrapper" offsetTop={0}>
@@ -308,7 +309,7 @@ function ShopSidebarOne(props) {
                                     scroll={false}
                                     style={
                                       containsAttrInUrl("category", category?._id)
-                                        ? { color: "red" }
+                                        ? { color: "red"}
                                         : {}
                                     }
                                   >
@@ -458,7 +459,7 @@ function ShopSidebarOne(props) {
                     <div
                       className="overflow-hidden widget"
                       ref={setCollapsibleElement}
-                      style={{ padding: "2rem" }}
+                      style={{ padding: "2rem 0" }}
                     >
                       <div className="widget-body pb-0">
                         <ul className="cat-list">
@@ -561,7 +562,7 @@ function ShopSidebarOne(props) {
                     <div
                       className="overflow-hidden widget"
                       ref={setCollapsibleElement}
-                      style={{ padding: "2rem" }}
+                      style={{ padding: "2rem 0" }}
                     >
                       <div className="widget-body pb-0">
                         <ul className="cat-list">
@@ -754,7 +755,7 @@ function ShopSidebarOne(props) {
                                 </h3>
                               </div>
                               <div className="overflow-hidden widget" ref={setCollapsibleElement}>
-                                <div style={{ padding: "10px" }}>
+                                <div style={{ padding: "2rem " }}>
                                   <ul
                                     className="config-swatch-list"
                                     style={{
@@ -842,12 +843,13 @@ function ShopSidebarOne(props) {
                               </div>
                               <div className="overflow-hidden widget" ref={setCollapsibleElement}>
                                 {/* design */}
-                                <div style={{ padding: "10px" }}>
+                                <div style={{ padding: "2rem " }}>
                                   <div
                                     style={{
                                       display: "flex",
                                       flexWrap: "wrap",
                                       maxWidth: "286px",
+                                      rowGap:"10px"
                                     }}
                                   >
                                     {attri?.attributeValues.length > 0 &&

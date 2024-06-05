@@ -262,7 +262,7 @@ function CartMenu({ props }) {
                                 cart.variants[cart.index].color.name}
                             </ALink>
                           ) : (
-                            <ALink href={`/product/default/${cart.slug}`}>
+                            <ALink href={`/product/default/${cart.slug}`} >
                               {cart.name +
                                 " - " +
                                 cart.variants[cart.index].color.name +

@@ -182,7 +182,7 @@ function Header({ adClass = "", wishlist }) {
       <header
         className={`header ${adClass} sticky-header mobile-sticky desktop-sticky`}
       >
-        <div className="header-middle" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
+        <div className="header-middle" style={{ paddingTop: "2rem", paddingBottom: "1rem" }}>
           <div className="container innercontainer">
             {/* <div className={styles.innercontainer}> */}
             <div className="header-left col-lg-2 w-auto pl-0">

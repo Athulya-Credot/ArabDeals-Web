@@ -285,6 +285,8 @@ function ProductOne(props) {
           <ALink
             href={`/product/default/${product._id}`}
             style={{ fontWeight: "500px", fontSize: "14px" }}
+            data-toggle="tooltip" data-title="open"
+            
           >
             {product.productName}
           </ALink>

@@ -220,7 +220,7 @@ function ShopImage () {
                     <ShopSidebarOne />
                 </div>
             </div>
-            <div className="mb-xl-4 mb-0"></div>
+            {/* <div className="mb-xl-4 mb-0"></div> */}
         </main>
     )
 }

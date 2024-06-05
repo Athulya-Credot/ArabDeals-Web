@@ -252,7 +252,7 @@ function Cart(props) {
             </div>
           ) : (
             <div className="row">
-              <div className="col-lg-8">
+              <div className="col-lg-7 mr-5">
                 <div className="cart-table-container">
                   <table className="table table-cart">
                     <thead>

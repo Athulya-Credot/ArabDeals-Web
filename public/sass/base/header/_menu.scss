@@ -732,7 +732,7 @@
   color: #000;
   border-left: 3px solid red;
   padding-left: 10px;
-  padding-top: 6px;
+  padding-top: 11px;
   display: flex;
   align-items: center;
   margin: 20px 0;
@@ -758,6 +758,7 @@
     max-width: 133px;
     cursor: pointer;
     &-label {
+      white-space: nowrap;
       font-size: 12px;
       font-weight: 500;
       margin-bottom: 0;
@@ -834,7 +835,7 @@
   }
   .custom__mobilemenu {
     display: flex;
-    padding: 5rem 0 0px 0;
+    padding: 5rem 0 0 0;
     gap: 18px;
     overflow-x: scroll;
     scrollbar-width: thin;

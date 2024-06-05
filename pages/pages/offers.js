@@ -172,7 +172,7 @@ function offers() {
         {/* </div> */}
 
         {/* <CategoryFilterSection />  */}
-        <div className={`container skeleton-body skel-shop-products pt-5 ${false ? "" : "loaded"}`}>
+        <div className={`container skeleton-body skel-shop-products  ${false ? "" : "loaded"}`}>
           {/* <BannerSection  data={data}/> */}
 
           <DealSection

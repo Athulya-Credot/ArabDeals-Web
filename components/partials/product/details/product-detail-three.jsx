@@ -139,7 +139,7 @@ function ProductDetailOne ( props ) {
             {
                 product &&
                 <div className={ `product-single-details ${ adClass }` }>
-                    <h1 className="product-title">{ product.name }</h1>
+                    <h1 className="product-title"  data-toggle="tooltip" data-title={ product.name }>{ product.name }</h1>
 
                     {
                         isNav ?

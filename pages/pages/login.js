@@ -161,7 +161,7 @@ function Login({ mutate }) {
             <nav
               aria-label="breadcrumb"
               className="breadcrumb-nav mb-0"
-              style={{ paddingBottom: "15px", borderBottom: "1px solid #F0F0F0" }}
+              style={{ paddingBottom: "15px"}}
             >
               {/* <div className="container">
                 <ol className="breadcrumb">

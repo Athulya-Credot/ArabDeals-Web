@@ -135,7 +135,7 @@ function Home() {
             {!loading && <HomeSection className="pb-5" data={sectionOneDatastate} />}
           </div>
         </div>
-        <div className={`container skeleton-body skel-shop-products my-sm-1 ${false ? "" : "loaded"}`}>
+        <div className={`container skeleton-body skel-shop-products mt-sm-4 ${false ? "" : "loaded"}`}>
           {!loading2 && !loading3 && (
             <BannerSection
               sectionTwoData={sectionTwoDatastate}

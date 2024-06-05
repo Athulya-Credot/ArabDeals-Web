@@ -687,7 +687,7 @@ function MainMenu({ router }) {
                   }}
                 >
                   <span className="custom__menulastchild__item-image">
-                    <img src={item?.logo?.fileURL} alt={item?.brandName} />
+                    <img src={item?.logo?.fileURL} alt={item?.brandName} style={{borderRadius:"50px"}} />
                   </span>
                   <p className="custom__menulastchild__item-label">
                     {item?.brandName}

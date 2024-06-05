@@ -13,9 +13,9 @@
 .header-search-category .btn{
     background-color: black!important;
 }
-.offerdiv{
+/* .offerdiv{
     margin:0 6px 0 65px
-}
+} */
 .navcontainer{
     border: 1px solid rgba(240, 240, 240, 1);
     padding: 18px!important;
@@ -32,10 +32,10 @@
     width: 20px;
     margin: 6px 0px;
 }
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 550px){
     .offerdiv{
         display: none!important;
-    } 
+    }  
 }
 
 

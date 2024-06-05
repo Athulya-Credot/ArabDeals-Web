@@ -70,17 +70,17 @@ function DealSection() {
         <h2 className="section-title d-flex align-items-center text-transform-none">
           Deals of the day
         </h2>
-        <ALink href="/shop?discount=10"> <p style={{ color: "rgba(0, 0, 0, 1)", fontWeight: "500",marginTop:'15px', }}>View All Products</p></ALink>
+        <ALink href="/shop?discount=10"> <p style={{ color: "rgba(0, 0, 0, 1)", fontWeight: "500" }}>View All Products</p></ALink>
 
       </div>
       <h4 className="recommendmob">Deals of the day</h4>
-      <Reveal
+      {/* <Reveal
         keyframes={fadeInUpShorter}
         delay={100}
         duration={1000}
         triggerOnce
       // style={{ border: "1px solid rgba(185, 185, 185, 1)" }}
-      >
+      > */}
         <div className="row">
           <div className="col-lg-4 col-md-5 mb-2 mb-md-0">
             {products
@@ -142,7 +142,7 @@ function DealSection() {
             </div>
           </div>
         </div>
-      </Reveal>
+      {/* </Reveal> */}
     </section>
   );
 }
