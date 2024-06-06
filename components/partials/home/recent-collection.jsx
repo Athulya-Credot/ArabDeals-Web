@@ -90,11 +90,11 @@ const fiftyPercentProducts = fiftyPercentData?.getProducts?.records;
           style={{ marginTop: "30px" }}
         >
           <div  
-            className="heading shop-list d-flex align-items-center flex-wrap  mb-0 pl-0 pr-0"
+            className="heading shop-list d-flex align-items-center flex-wrap pb-4 mb-0 pl-0 pr-0"
             style={{ borderBottom: "1px solid ", borderColor: "#EEEEEE" }}
           >
             <h4 className="section-title text-transform-none mb-0 mr-0">
-             50% Off
+             50% OFF
             </h4>
             <ALink className="view-all ml-auto" href='/shop?discount=50'>
               View All Products
@@ -109,11 +109,11 @@ const fiftyPercentProducts = fiftyPercentData?.getProducts?.records;
                 ...productSlider.responsive,
                 0: {
                   items: 2,
-                  nav: true
+                  nav: false
               },
               576: {
                   items: 2,
-                  nav: true
+                  nav: false
               },
               768: {
                   items: 3,
@@ -159,11 +159,11 @@ const fiftyPercentProducts = fiftyPercentData?.getProducts?.records;
           style={{ marginTop: "30px" }}
         >
           <div
-            className="heading shop-list d-flex align-items-center flex-wrap mb-0 pl-0 pr-0"
+            className="heading shop-list d-flex align-items-center flex-wrap pb-4 mb-0 pl-0 pr-0"
             style={{ borderBottom: "1px solid ", borderColor: "#EEEEEE" }}
           >
             <h4 className="section-title text-transform-none mb-0 mr-0">
-            30%off
+            30% OFF
             </h4>
             <ALink className="view-all ml-auto" href="/shop?discount=30">
               View All Products
@@ -179,11 +179,11 @@ const fiftyPercentProducts = fiftyPercentData?.getProducts?.records;
                 ...productSlider.responsive,
                 0: {
                   items: 2,
-                  nav: true
+                  nav: false
               },
               576: {
                   items: 2,
-                  nav: true
+                  nav: false
               },
               768: {
                   items: 3,
@@ -227,11 +227,11 @@ const fiftyPercentProducts = fiftyPercentData?.getProducts?.records;
           style={{ marginTop: "30px" }}
         >
           <div
-            className="heading shop-list d-flex align-items-center flex-wrap mb-0 pl-0 pr-0"
+            className="heading shop-list d-flex align-items-center flex-wrap pb-4 mb-0 pl-0 pr-0"
             style={{ borderBottom: "1px solid ", borderColor: "#EEEEEE" }}
           >
             <h4 className="section-title text-transform-none mb-0 mr-0">
-              10% Off
+              10% OFF
             </h4>
             <ALink className="view-all ml-auto" href='/shop?discount=10'>
               View All Products
@@ -247,11 +247,11 @@ const fiftyPercentProducts = fiftyPercentData?.getProducts?.records;
                 ...productSlider.responsive,
                 0: {
                   items: 2,
-                  nav: true
+                  nav: false
               },
               576: {
                   items: 2,
-                  nav: true
+                  nav: false
               },
               768: {
                   items: 3,

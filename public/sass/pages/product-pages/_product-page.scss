@@ -717,14 +717,15 @@ main .sticky-header {
 		}
 	}
 }
-
-// 2.4) Filter
 .product-single-filter {
 	display: -ms-flexbox;
-	// display: flex;
+	display: flex;
 	-ms-flex-align: center;
 	align-items: center;
-	margin-bottom: 1rem;
+	// margin-bottom: 1rem;
+	overflow-x: scroll;
+
+	
 
 	label {
 		margin-right: 4.2rem;
@@ -823,6 +824,9 @@ main .sticky-header {
 		}
 	}
 
+	.product-single-filter::-webkit-scrollbar {
+		display: none;
+	  }
 	.config-img-list li {
 		a.filter-thumb {
 			height: 100%;
@@ -1124,9 +1128,9 @@ margin-bottom: -119px;
 		color: #7b858a;
 		line-height: 1.92;
 
-		&.show {
-			padding: 3rem 0 3rem;
-		}
+		// &.show {
+		// 	padding: 3rem 0 3rem;
+		// }
 	}
 
 	.sticky-header {

@@ -568,9 +568,9 @@ function ProductDetailOne(props) {
 
   return (
     <>
-      <div className={`skel-pro  skel-detail ${adClass}`}></div>
+      <div className={`skel-pro  skel-detail ${adClass} `}></div>
       {product && (
-        <div className={`product-single-details ${adClass}`}>
+        <div className={`product-single-details pl-4 pl-md-0 ${adClass}`}>
           <p
             style={{
               color: "#E30613",
@@ -596,8 +596,8 @@ function ProductDetailOne(props) {
 
           {isNav ? <ProductNav prev={prev} next={next} /> : ""}
 
-          <div className="ratings-container">
-            <div className="product-ratings">
+          <div className="">
+            {/* <div className="product-ratings">
               <span
                 className="ratings"
                 style={{ width: `${20 * product.rating}%` }}
@@ -605,9 +605,9 @@ function ProductDetailOne(props) {
               <span className="tooltiptext tooltip-top">
                 {product?.rating?.toFixed(2)}
               </span>
-            </div>
+            </div> */}
 
-            <ALink
+            {/* <ALink
               href="#"
               className="rating-link"
               style={{ fontSize: "1.1rem" }}
@@ -617,12 +617,12 @@ function ProductDetailOne(props) {
                 ? `${product.reviews} Reviews`
                 : "There are no reviews yet."}{" "}
               )
-            </ALink>
+            </ALink> */}
           </div>
 
           {/* <hr className="short-divider" /> */}
 
-          <div className="price-box">
+          <div className="price-box pt-5 ">
             {product?.price == product.price ? (
               <>
                 <span

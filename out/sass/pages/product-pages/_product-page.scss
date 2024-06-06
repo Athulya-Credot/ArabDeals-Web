@@ -725,6 +725,12 @@ main .sticky-header {
 	-ms-flex-align: center;
 	align-items: center;
 	margin-bottom: 1rem;
+	overflow-x: scroll;
+
+	::-webkit-scrollbar {
+		display: none;
+	  }
+	  
 
 	label {
 		margin-right: 4.2rem;
@@ -1125,7 +1131,7 @@ margin-bottom: -119px;
 		line-height: 1.92;
 
 		&.show {
-			padding: 3rem 0 3rem;
+			padding: 3rem 0 0;
 		}
 	}
 

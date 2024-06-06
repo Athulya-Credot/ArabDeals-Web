@@ -39,12 +39,12 @@ export default function ProductThree ( props ) {
                     <ALink href={ `/product/default/${ product.slug }` }>{ product.name }</ALink>
                 </h3>
 
-                <div className="ratings-container">
+                {/* <div1 className="ratings-container">
                     <div className="product-ratings">
                         <span className="ratings" style={ { width: 20 * product.ratings + '%' } }></span>
                         <span className="tooltiptext tooltip-top">{ product.ratings.toFixed( 2 ) }</span>
                     </div>
-                </div>
+                </div1> */}
 
                 <div className="price-box">
                     {

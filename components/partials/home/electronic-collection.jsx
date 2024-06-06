@@ -112,13 +112,13 @@ function ElectronicCollection() {
                 0: {
                   items: 2,
                   
-                  nav: true,
+                  nav: false,
                   loop: true
 
                 },
                 576: {
                   items: 2,
-                  nav: true,
+                  nav: false,
                   loop: true,
                 },
                 768: {

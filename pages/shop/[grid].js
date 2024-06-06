@@ -185,7 +185,7 @@ function ShopGrid() {
       <div className="container pt-2">
         <div className="row">
           <div
-            className={`main-content ${showsidebar ? "col-lg-9" : "col-12"}`}
+            className={`main-content border ${showsidebar ? "col-lg-9" : "col-12"}`}
           >
             <nav className="toolbox sticky-header mobile-sticky">
               <div className="toolbox-left">

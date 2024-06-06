@@ -149,14 +149,14 @@ function ProductDetailFive ( props ) {
 
                                     <ProductNav prev={ prev } next={ next } />
 
-                                    <div className="ratings-container">
+                                    {/* <div1 className="ratings-container">
                                         <div className="product-ratings">
                                             <span className="ratings" style={ { width: `${ 20 * product.ratings }%` } }></span>
                                             <span className="tooltiptext tooltip-top">{ product.ratings.toFixed( 2 ) }</span>
                                         </div>
 
                                         <ALink href="#" className="rating-link">( { product.reviews > 0 ? `${ product.reviews } Reviews` : 'There are no reviews yet.' } )</ALink>
-                                    </div>
+                                    </div1> */}
 
                                     <hr className="short-divider" />
                                 </>
